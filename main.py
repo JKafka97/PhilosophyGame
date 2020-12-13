@@ -28,9 +28,10 @@ def web_open(url):
 
 
 def links_find(soup):
-    all_links= soup.findAll('a')
-    for link in all_links:
-        print (link)
+    links_list = soup.find_all("a")
+    for link in links_list:
+        if "href" in link.attrs:
+            print(str(link.attrs["href"]))
 
 
 if __name__ == "__main__":
