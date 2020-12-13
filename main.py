@@ -6,16 +6,11 @@ import random
 
 def main():
     request = get_link()
-<<<<<<< HEAD
-    url = get_soup(request)
-    web_open(url)
-=======
     url, soup = get_soup(request)
     web_open(url)
     while "Philosophy" not in url:
         url, soup = links_find(soup)
         web_open(url)
->>>>>>> dev
 
 
 def get_link():
@@ -28,21 +23,13 @@ def get_soup(request):
     soup = BeautifulSoup(request.content, 'html.parser')
     title = soup.find(class_ = "firstHeading").text
     url = 'https://en.wikipedia.org/wiki/%s' %title
-<<<<<<< HEAD
-    return url
-=======
     return url, soup
->>>>>>> dev
     
 
 def web_open(url):  
     webbrowser.open(url)
 
 
-<<<<<<< HEAD
-if __name__ == "__main__":
-    main()
-=======
 def links_find(soup):
     rnd_num = random.randint(3,5)
     for link in (soup.findAll('a'))[rnd_num:]:
@@ -61,4 +48,3 @@ def links_find(soup):
 
 if __name__ == "__main__":
     main()
->>>>>>> dev
