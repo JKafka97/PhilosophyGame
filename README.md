@@ -1,2 +1,2 @@
-# RWS_UI
+# PhilosophyGame
 Simple script to find article about philosophy.
